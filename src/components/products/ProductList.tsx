@@ -29,7 +29,7 @@ const ProductsList = () => {
 		useQuery({
 			queryKey: ['products'],
 			queryFn: fetchProducts,
-			staleTime: 1000 * 60 * 5, // This means refetch data after 5 minutes in the background, optional feature.
+			staleTime: 1000 * 60 * 5, // This means refetch data after 5 minutes, in the background, it's an optional feature of TanStack Query.
 		})
 
 	// useMemo hook to optimize filtering.

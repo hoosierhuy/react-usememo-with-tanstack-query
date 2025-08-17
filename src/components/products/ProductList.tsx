@@ -9,7 +9,9 @@ import type { ApiResponse } from './types'
 // This async function is responsible for fetching the product data from the API.
 // TanStack Query will call this function for us.
 const fetchProducts = async (): Promise<ApiResponse> => {
-	const response = await fetch('https://dummyjson.com/products?limit=101')
+	const response = await fetch(
+		'https://dummyjson.com/products?limit=101&skip=0&select=title,description,price,brand,category,thumbnail',
+	)
 
 	if (!response.ok) {
 		throw new Error('Network response was not ok')
@@ -36,7 +38,7 @@ const ProductsList = () => {
 	// This calculation will only re-run if 'data' or 'searchTerm' changes.
 	// I added a TL;DR section at the bottom of this file to explain what
 	// would happen if we did not use the useMemo hook, or if we did not
-	// manually create a memoized function.
+	// manually create a memoized function in a vanilla JS app.
 	const filteredProducts = useMemo(() => {
 		if (!data?.products) return []
 
@@ -112,9 +114,9 @@ Without useMemo (and if we were to fetch and filter 300 products):
 
 Every component re-render = 300+ string operations
 Could cause noticeable lag on slower devices
-Potential frame drops during typing
-With useMemo (300 products):
+Potential frame drops during typing.
 
+With useMemo (300 products):
 Filtering only happens when search term changes
 Smooth user experience even with larger dataset
 Better performance on mobile/older devices

@@ -69,7 +69,7 @@ const ProductsList = () => {
 					Friendly Neighborhood Department Store
 				</h2>
 				<p className="text-lg text-gray-500">
-					Using React w/ TypeScript, TanStack Query & the useMemo hook
+					Using React, TanStack Query, React.memo, and useMemo hook
 				</p>
 			</header>
 

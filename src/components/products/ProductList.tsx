@@ -69,7 +69,17 @@ const ProductsList = () => {
 					Friendly Neighborhood Department Store
 				</h2>
 				<p className="text-lg text-gray-500">
-					Using React, TanStack Query, React.memo, and useMemo hook
+					Using TanStack Query, React.memo, and the useMemo hook to demonstrate
+					memoization. Companion YouTube{' '}
+					<a
+						href="https://www.youtube.com/watch?v=IkGYJXoSW0w"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-blue-600 underline"
+					>
+						video
+					</a>
+					.
 				</p>
 			</header>
 
